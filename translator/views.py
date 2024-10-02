@@ -16,12 +16,12 @@ def translate_text(request):
             translator = Translator()
             translated_text = translator.translate(source_text, src=source_language, dest=target_language).text
 
-            Translation.objects.create(
-                source_language=source_language,
-                target_language=target_language,
-                source_text=source_text,
-                translated_text=translated_text
-            )
+            # Translation.objects.create(
+                # source_language=source_language,
+                # target_language=target_language,
+                # source_text=source_text,
+                # translated_text=translated_text
+            # )
 
             return render(request, 'home.html', {'form': form, 'translated_text': translated_text})
     else:
